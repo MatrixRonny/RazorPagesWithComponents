@@ -7,9 +7,17 @@
 
 <button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
 
-<input id="input1" class="form-control" @bind="input1"/>
-<button class="btn btn-primary" @onclick="Save">Save</button>
-<label class="form-label">@stringInput</label>
+<div class="row mt-4">
+    <div class="col-md-4 mt-4">
+        <input id="input1" class="form-control" @bind="input1" placeholder="Write something" />
+    </div>
+    <div class="col-md-2 mt-4">
+        <button class="btn btn-primary w-100" @onclick="Save">Save</button>
+    </div>
+    <div class="col-md-6 mt-4 align-content-end">
+        <label class="form-label">@stringInput</label>
+    </div>
+</div>
 
 @code {
     private string input1;
@@ -22,6 +30,6 @@
     }
     void Save()
     {
-        stringInput = input1.ToString();
+        stringInput = input1;
     }
 }
