@@ -4,8 +4,9 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
-builder.Services.AddRazorComponents()
-    .AddInteractiveServerComponents();
+builder.Services.AddServerSideBlazor();
+//builder.Services.AddRazorComponents()
+//    .AddInteractiveServerComponents();
 
 var app = builder.Build();
 
@@ -25,6 +26,7 @@ app.UseAntiforgery();
 app.UseAuthorization();
 
 app.MapRazorPages();
-app.MapRazorComponents<App>()
-    .AddInteractiveServerRenderMode();
+//app.MapRazorComponents<App>()
+//    .AddInteractiveServerRenderMode();
+app.MapBlazorHub();
 app.Run();
